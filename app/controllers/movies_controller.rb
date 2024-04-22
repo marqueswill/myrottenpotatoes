@@ -1,12 +1,11 @@
 class MoviesController < ApplicationController
-  # Create
+  ### Create
   def new
     @movie = Movie.new
   end
 
   def create
     @movie = Movie.new(movie_params)
-
     if @movie.save
       redirect_to movies_path
     else
@@ -14,14 +13,13 @@ class MoviesController < ApplicationController
     end
   end
 
-  # Update
+  ### Update
   def edit
     @movie = Movie.find(params[:id])
   end
 
   def update
     @movie = Movie.find(params[:id])
-
     if @movie.update(movie_params)
       redirect_to @movie
     else
@@ -29,7 +27,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  # Read
+  ### Read
   def index
     @movies = Movie.all
   end
@@ -38,7 +36,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
-  # Delete
+  ### Delete
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
@@ -46,6 +44,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  ######
   private
 
   def movie_params

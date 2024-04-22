@@ -6,8 +6,5 @@
 </ul>
 
 <button><%= link_to "Edit this movie", edit_movie_path(@movie) %></button>
-<button><%= link_to "Delete this movie", movie_path(@movie), data: {
-                                                                turbo_method: :delete,
-                                                                turbo_confirm: "Are you sure?",
-                                                              } %></button>
+<button><%= link_to "Delete this movie", movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
 <button><%= link_to "Back to list", movies_path %></button>

@@ -30,6 +30,6 @@
   </div>
   <br>
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Save', data:{turbo_confirm: 'Are you sure?'} %>
   </div>
 <% end %>
