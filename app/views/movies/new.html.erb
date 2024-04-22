@@ -1,0 +1,38 @@
+<h1>Register a movie</h1>
+<%= form_with model: @movie do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @movie.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <% @movie.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :rating %><br>
+    <%= form.select :rating, ["Select", "G", "PG", "PG-13", "R", "NC-17"], selected: @movie.rating %>
+    <% @movie.errors.full_messages_for(:rating).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :release_date %><br>
+    <%= form.date_field :release_date %>
+    <% @movie.errors.full_messages_for(:release_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

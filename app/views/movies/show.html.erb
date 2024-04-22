@@ -1,0 +1,13 @@
+<h1><%= @movie.title %></h1>
+<ul>
+  <li>DESCRIPTION: <%= @movie.description %></li>
+  <li>RELEASE DATE: <%= @movie.release_date.strftime("%d-%b-%Y") %></li>
+  <li>RATING: <%= @movie.rating %></li>
+</ul>
+
+<button><%= link_to "Edit this movie", edit_movie_path(@movie) %></button>
+<button><%= link_to "Delete this movie", movie_path(@movie), data: {
+                                                                turbo_method: :delete,
+                                                                turbo_confirm: "Are you sure?",
+                                                              } %></button>
+<button><%= link_to "Back to list", movies_path %></button>
